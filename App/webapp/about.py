@@ -1,12 +1,11 @@
-import justpy as jp 
+import justpy as jp
 
-class Home:
-    #path = '/home'
-    path = '/'
+class About:
+    path = '/about' #path je class variable jer ce biti ista kod svih instanci nema smisla da bude u initu
     def serve(self):
-        wp = jp.QuasarPage(tailwind=True)
+        wp = jp.QuasarPage(tailwind = True)
         div = jp.Div(a = wp, classes = 'bg-gray-200 h-screen')
-        jp.Div(a=div, text='This is Home page', classes = 'text-4xl m-2')
+        jp.Div(a=div, text='This is About page', classes = 'text-4xl m-2')
         jp.Div(a=div, text = """
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -16,11 +15,8 @@ class Home:
         Excepteur sint occaecat cupidatat non proident,
         sunt in culpa qui officia deserunt mollit anim id est laborum.
         """, classes= "text-lg")
-        
         return wp
 
-
-
-
-# jp.Route(Home.path, Home.serve)
-# jp.justpy(localhost = 8001)
+#rout this class to that path
+# jp.Route(About.path, About.serv)# ovo smo zakomentarisali jer ne zelim dve zasebne akcije vec jednu, to cemo vrapovati mejnom 
+# jp.justpy(port=8001)
